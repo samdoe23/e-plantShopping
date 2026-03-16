@@ -12,11 +12,17 @@ const CartItem = ({ onContinueShopping }) => {
 
   const handleContinueShopping = (e) => {};
 
-  const handleIncrement = (item) => {};
+  const handleIncrement = (item) => {
+    dispatch(updateQuantity({ ...item, op: "increment" }));
+  };
 
-  const handleDecrement = (item) => {};
+  const handleDecrement = (item) => {
+    dispatch(updateQuantity({ ...item, op: "decrement" }));
+  };
 
-  const handleRemove = (item) => {};
+  const handleRemove = (item) => {
+    dispatch(removeItem(item.name));
+  };
 
   // Calculate total cost based on quantity for an item
   const calculateTotalCost = (item) => {};
